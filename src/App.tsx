@@ -217,10 +217,10 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-[#f7f9fb] text-[#191c1e] font-sans flex flex-col transition-colors duration-300">
+    <div className="h-screen bg-[#f7f9fb] text-[#191c1e] font-sans flex flex-col transition-colors duration-300 overflow-hidden">
       
       {/* 1. Desktop & Mobile Persistent Top Header (For Explore, Resources, Chat, Settings) */}
-      <header className="bg-white sticky top-0 z-50 border-b border-gray-100 shadow-sm w-full">
+      <header className="bg-white z-50 border-b border-gray-100 shadow-sm w-full flex-shrink-0">
         <nav className="flex justify-between items-center px-4 md:px-16 w-full max-w-7xl mx-auto h-16">
           {/* Logo */}
           <div className="flex items-center gap-2 cursor-pointer" onClick={() => setCurrentView("landing")}>
@@ -348,8 +348,8 @@ export default function App() {
       </header>
 
       {/* 2. Main Content viewport container */}
-      <div className="flex-1 overflow-y-auto">
-        <main className="w-full">
+      <div className="flex-1 min-h-0">
+        <main className="h-full overflow-y-auto">
           {currentView === "dashboard" && (
             <Dashboard 
               profile={profile}

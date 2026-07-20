@@ -238,7 +238,7 @@ export default function TutorChat({ session, onBackToDashboard, onUpdateSession,
   ];
 
   return (
-    <div className="flex-1 h-screen flex flex-col md:flex-row bg-[#f7f9fb] overflow-hidden">
+    <div className="h-full flex flex-col md:flex-row bg-[#f7f9fb] overflow-hidden">
       
       {/* LEFT PANEL: Problem Statement, Image snapshot, and Milestones */}
       <aside className="w-full md:w-1/2 lg:w-5/12 h-1/2 md:h-full bg-white border-r border-gray-200 p-6 flex flex-col overflow-y-auto custom-scrollbar">
