@@ -121,7 +121,7 @@ app.post("/api/tutor/chat", async (req, res) => {
   try {
     const { messages, subject, topic, question, currentMilestoneIndex } = req.body;
 
-    if (!messages || !Array.isArray(messages)) {
+    if (!messages || !Array.isArray(messages) || messages.length === 0) {
       return res.status(400).json({ error: "Missing or invalid chat messages." });
     }
 
