@@ -1,0 +1,6 @@
+{
+  "name": "Socratic AI Tutor",
+  "description": "An interactive, fully responsive Socratic AI Tutor that guides students step-by-step through O/A-Level and Local Board problems using the Gemini API.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
