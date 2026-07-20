@@ -112,17 +112,17 @@ export default function ProfileSettings({ profile, onUpdateProfile, onViewChange
   const academicLevels = ["A-Level", "O-Level", "Local Board", "Regional Curriculum"] as const;
 
   return (
-    <div className="flex-1 min-h-screen bg-[#f7f9fb] p-6 md:p-8 transition-colors duration-300">
+    <div className="flex-1 min-h-screen bg-[#f7f9fb] dark:bg-slate-950 p-6 md:p-8 transition-colors duration-300">
       <div className="max-w-4xl mx-auto space-y-8">
         
         {/* Header Title */}
-        <div className="pb-6 border-b border-gray-200">
-          <h1 className="text-2xl font-bold text-[#131b2e]">Student Profile & Settings</h1>
-          <p className="text-sm text-gray-500">Configure your curriculum level, account settings, and visual themes.</p>
+        <div className="pb-6 border-b border-gray-200 dark:border-slate-800">
+          <h1 className="text-2xl font-bold text-[#131b2e] dark:text-white">Student Profile & Settings</h1>
+          <p className="text-sm text-gray-500 dark:text-gray-400">Configure your curriculum level, account settings, and visual themes.</p>
         </div>
 
         {/* Profile Card details */}
-        <section className="bg-white rounded-3xl p-6 border border-gray-100 shadow-sm grid grid-cols-1 md:grid-cols-3 gap-8 items-center transition-colors">
+        <section className="bg-white dark:bg-slate-900 rounded-3xl p-6 border border-gray-100 dark:border-slate-800 shadow-sm grid grid-cols-1 md:grid-cols-3 gap-8 items-center transition-colors">
           {/* Large Avatar container */}
           <div className="flex flex-col items-center justify-center text-center space-y-3">
             <div className="w-24 h-24 rounded-full border-4 border-[#00e5ff] overflow-hidden shadow-md relative group">
@@ -133,40 +133,40 @@ export default function ProfileSettings({ profile, onUpdateProfile, onViewChange
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
             </div>
-            <div>
-              <h3 className="text-lg font-bold text-[#131b2e]">{name}</h3>
-              <p className="text-xs text-[#006875] font-extrabold uppercase bg-[#00e5ff]/10 px-2.5 py-1 rounded-full mt-1.5 inline-block">
-                {level} Scholar
-              </p>
-            </div>
+              <div>
+                <h3 className="text-lg font-bold text-[#131b2e] dark:text-white">{name}</h3>
+                <p className="text-xs text-[#006875] font-extrabold uppercase bg-[#00e5ff]/10 px-2.5 py-1 rounded-full mt-1.5 inline-block">
+                  {level} Scholar
+                </p>
+              </div>
           </div>
 
           {/* Account information input */}
           <div className="md:col-span-2 space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-1.5">
-                <label className="text-xs font-bold text-gray-400 uppercase">Scholar Name</label>
+                <label className="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">Scholar Name</label>
                 <input
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-[#00e5ff] outline-none"
+                  className="w-full bg-gray-50 dark:bg-slate-800 dark:text-white border border-gray-200 dark:border-slate-700 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-[#00e5ff] outline-none transition-colors"
                 />
               </div>
               <div className="space-y-1.5">
-                <label className="text-xs font-bold text-gray-400 uppercase">Email Address</label>
+                <label className="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">Email Address</label>
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-[#00e5ff] outline-none"
+                  className="w-full bg-gray-50 dark:bg-slate-800 dark:text-white border border-gray-200 dark:border-slate-700 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-[#00e5ff] outline-none transition-colors"
                 />
               </div>
             </div>
 
             {/* Level Selector Toggle chips */}
             <div className="space-y-2">
-              <label className="text-xs font-bold text-gray-400 uppercase block">Curriculum / Level Selector</label>
+              <label className="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase block">Curriculum / Level Selector</label>
               <div className="flex flex-wrap gap-2">
                 {academicLevels.map((lvl) => {
                   const isSelected = level === lvl;
@@ -177,7 +177,7 @@ export default function ProfileSettings({ profile, onUpdateProfile, onViewChange
                       className={`px-4 py-2 text-xs font-bold rounded-full transition-all cursor-pointer ${
                         isSelected
                           ? "bg-[#006875] text-white shadow-sm"
-                          : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+                          : "bg-gray-100 dark:bg-slate-800 text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-slate-700"
                       }`}
                     >
                       {lvl}
@@ -190,10 +190,10 @@ export default function ProfileSettings({ profile, onUpdateProfile, onViewChange
         </section>
 
         {/* Profile Image Customizer Section (Drag and Drop / presets) */}
-        <section className="bg-white rounded-3xl p-6 border border-gray-100 shadow-sm space-y-6 transition-colors">
+        <section className="bg-white dark:bg-slate-900 rounded-3xl p-6 border border-gray-100 dark:border-slate-800 shadow-sm space-y-6 transition-colors">
           <div>
-            <h3 className="text-base font-bold text-[#131b2e]">Custom Profile Image</h3>
-            <p className="text-xs text-gray-400 mt-1">Upload a photo, drag one in, or choose from ready-made academic avatar presets.</p>
+            <h3 className="text-base font-bold text-[#131b2e] dark:text-white">Custom Profile Image</h3>
+            <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">Upload a photo, drag one in, or choose from ready-made academic avatar presets.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -206,14 +206,14 @@ export default function ProfileSettings({ profile, onUpdateProfile, onViewChange
               className={`border-2 border-dashed rounded-2xl p-6 flex flex-col items-center justify-center text-center cursor-pointer transition-all ${
                 isDragging 
                   ? "border-[#00e5ff] bg-[#00e5ff]/5" 
-                  : "border-gray-200 hover:border-[#00e5ff] bg-gray-50"
+                  : "border-gray-200 dark:border-slate-700 hover:border-[#00e5ff] bg-gray-50 dark:bg-slate-800"
               }`}
             >
               <span className="material-symbols-outlined text-4xl text-gray-300 mb-2">
                 cloud_upload
               </span>
-              <p className="text-xs font-bold text-gray-700">Drag & drop your photo here</p>
-              <p className="text-[10px] text-gray-400 mt-1">or click to browse your files (PNG, JPG)</p>
+              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Drag & drop your photo here</p>
+              <p className="text-[10px] text-gray-400 dark:text-gray-500 mt-1">or click to browse your files (PNG, JPG)</p>
               <input
                 type="file"
                 ref={fileInputRef}
@@ -226,7 +226,7 @@ export default function ProfileSettings({ profile, onUpdateProfile, onViewChange
             {/* Presets and URL picker */}
             <div className="flex flex-col justify-between space-y-4">
               <div className="space-y-2">
-                <label className="text-xs font-bold text-gray-400 uppercase block">Scholar Avatar Presets</label>
+                <label className="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase block">Scholar Avatar Presets</label>
                 <div className="flex items-center gap-3">
                   {AVATAR_PRESETS.map((preset, index) => (
                     <button
@@ -253,9 +253,9 @@ export default function ProfileSettings({ profile, onUpdateProfile, onViewChange
                     value={avatarUrl.startsWith("data:") ? "" : avatarUrl}
                     onChange={(e) => setAvatarUrl(e.target.value || profile.avatarUrl)}
                     placeholder="https://example.com/avatar.png"
-                    className="w-full bg-gray-50 border border-gray-200 rounded-xl pl-4 pr-10 py-2.5 text-xs focus:ring-2 focus:ring-[#00e5ff] outline-none"
+                    className="w-full bg-gray-50 dark:bg-slate-800 dark:text-white border border-gray-200 dark:border-slate-700 rounded-xl pl-4 pr-10 py-2.5 text-xs focus:ring-2 focus:ring-[#00e5ff] outline-none transition-colors"
                   />
-                  <span className="material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-lg">
+                  <span className="material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500 text-lg">
                     link
                   </span>
                 </div>
@@ -268,13 +268,13 @@ export default function ProfileSettings({ profile, onUpdateProfile, onViewChange
         <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
           
           {/* Notification toggles card */}
-          <div className="bg-white rounded-3xl p-6 border border-gray-100 shadow-sm space-y-4 transition-colors">
-            <h3 className="text-base font-bold text-gray-800">Alert Preferences</h3>
+          <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 border border-gray-100 dark:border-slate-800 shadow-sm space-y-4 transition-colors">
+            <h3 className="text-base font-bold text-gray-800 dark:text-white">Alert Preferences</h3>
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-bold text-gray-700">Email updates</p>
-                  <p className="text-xs text-gray-400">Receive weekly mastery and analytics reports</p>
+                  <p className="text-sm font-bold text-gray-700 dark:text-gray-200">Email updates</p>
+                  <p className="text-xs text-gray-400 dark:text-gray-500">Receive weekly mastery and analytics reports</p>
                 </div>
                 <button 
                   onClick={() => {
@@ -283,7 +283,7 @@ export default function ProfileSettings({ profile, onUpdateProfile, onViewChange
                     showToast?.(next ? "Weekly reports active!" : "Weekly report emails disabled.", "info");
                   }}
                   className={`w-12 h-6 rounded-full p-1 transition-colors duration-200 cursor-pointer relative ${
-                    emailNotif ? "bg-[#00e5ff]" : "bg-gray-200"
+                    emailNotif ? "bg-[#00e5ff]" : "bg-gray-200 dark:bg-slate-700"
                   }`}
                 >
                   <div className={`w-4 h-4 bg-white rounded-full shadow-md transform transition-transform duration-200 ${
@@ -292,10 +292,10 @@ export default function ProfileSettings({ profile, onUpdateProfile, onViewChange
                 </button>
               </div>
 
-              <div className="flex items-center justify-between border-t border-gray-100 pt-4">
+              <div className="flex items-center justify-between border-t border-gray-100 dark:border-slate-800 pt-4">
                 <div>
-                  <p className="text-sm font-bold text-gray-700">Streak notifications</p>
-                  <p className="text-xs text-gray-400">Daily reminder to maintain your study progress streak</p>
+                  <p className="text-sm font-bold text-gray-700 dark:text-gray-200">Streak notifications</p>
+                  <p className="text-xs text-gray-400 dark:text-gray-500">Daily reminder to maintain your study progress streak</p>
                 </div>
                 <button 
                   onClick={() => {
@@ -304,7 +304,7 @@ export default function ProfileSettings({ profile, onUpdateProfile, onViewChange
                     showToast?.(next ? "Streak interface alerts active!" : "Streak interface alerts hidden.", "info");
                   }}
                   className={`w-12 h-6 rounded-full p-1 transition-colors duration-200 cursor-pointer relative ${
-                    streakAlerts ? "bg-[#00e5ff]" : "bg-gray-200"
+                    streakAlerts ? "bg-[#00e5ff]" : "bg-gray-200 dark:bg-slate-700"
                   }`}
                 >
                   <div className={`w-4 h-4 bg-white rounded-full shadow-md transform transition-transform duration-200 ${
@@ -316,26 +316,35 @@ export default function ProfileSettings({ profile, onUpdateProfile, onViewChange
           </div>
 
           {/* Visual Settings card */}
-          <div className="bg-white rounded-3xl p-6 border border-gray-100 shadow-sm space-y-4 transition-colors">
-            <h3 className="text-base font-bold text-gray-800">Visual Settings</h3>
+          <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 border border-gray-100 dark:border-slate-800 shadow-sm space-y-4 transition-colors">
+            <h3 className="text-base font-bold text-gray-800 dark:text-white">Visual Settings</h3>
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-bold text-gray-700">Visual Theme</p>
-                  <p className="text-xs text-gray-400">Optimized for clean, bright high-contrast learning</p>
+                  <p className="text-sm font-bold text-gray-700 dark:text-gray-200">Visual Theme</p>
+                  <p className="text-xs text-gray-400 dark:text-gray-500">Switch between light and dark mode for comfortable studying</p>
                 </div>
-                <span className="px-4 py-2 bg-gray-100 rounded-xl flex items-center gap-2 text-xs font-bold text-gray-700">
-                  <span className="material-symbols-outlined text-base">
-                    light_mode
+                <button
+                  onClick={() => toggleTheme(!isDarkMode)}
+                  className={`relative w-14 h-7 rounded-full p-1 transition-colors duration-200 cursor-pointer flex items-center ${
+                    isDarkMode ? "bg-[#00e5ff]/30" : "bg-gray-200"
+                  }`}
+                  title={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+                >
+                  <span className={`flex items-center justify-center w-5 h-5 rounded-full shadow-md transition-all duration-200 text-xs ${
+                    isDarkMode ? "translate-x-7 bg-[#131b2e] text-[#00e5ff]" : "translate-x-0 bg-white text-amber-500"
+                  }`}>
+                    <span className="material-symbols-outlined text-[14px] font-bold">
+                      {isDarkMode ? "dark_mode" : "light_mode"}
+                    </span>
                   </span>
-                  Light Mode
-                </span>
+                </button>
               </div>
 
-              <div className="flex items-center justify-between border-t border-gray-100 pt-4">
+              <div className="flex items-center justify-between border-t border-gray-100 dark:border-slate-800 pt-4">
                 <div>
-                  <p className="text-sm font-bold text-gray-700">Database Connection</p>
-                  <p className="text-xs text-gray-400">Manage real-time Firestore sync and secure caches</p>
+                  <p className="text-sm font-bold text-gray-700 dark:text-gray-200">Database Connection</p>
+                  <p className="text-xs text-gray-400 dark:text-gray-500">Manage real-time Firestore sync and secure caches</p>
                 </div>
                 <span className="text-xs font-bold text-[#006875] bg-[#00e5ff]/10 px-2.5 py-1 rounded-full">
                   Fully Connected
@@ -349,7 +358,7 @@ export default function ProfileSettings({ profile, onUpdateProfile, onViewChange
         <div className="flex gap-4 justify-end">
           <button 
             onClick={() => onViewChange("dashboard")}
-            className="px-6 py-3 border border-gray-200 text-gray-500 font-bold rounded-xl hover:bg-gray-50 active:scale-95 transition-all cursor-pointer"
+            className="px-6 py-3 border border-gray-200 dark:border-slate-700 text-gray-500 dark:text-gray-400 font-bold rounded-xl hover:bg-gray-50 dark:hover:bg-slate-800 active:scale-95 transition-all cursor-pointer"
           >
             Cancel
           </button>
